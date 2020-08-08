@@ -1,0 +1,33 @@
+Lenguaje de programacion imperativos: El programa se ejecuta de manera secuencial, ya que indican
+orden tras orden que debe de seguir el ordenador para lograr su objetivo
+Ejemplo:
+function fibonacci(n) {
+  var actual, ant1, ant2;
+  if (n === 0) {
+    actual = 0;
+  } else if (n === 1) {
+    actual = 1;
+  } else {
+    ant1 = ant2 = 1;
+    for (i = 2; i < n; i++) {
+      actual = ant1 + ant2;
+      ant2 = ant1;
+      ant1 = actual;
+    }
+  }
+  return actual;
+}
+
+
+
+Lenguaje de programación declarativo: Este no indica paso a paso el procedimiento, simplemente se
+determina de un solo la solución que se desea alcanzar
+Ejemplo:
+
+-module(fibonacci).
+-export([fibonacci/1]).
+
+-spec fibonacci(non_neg_integer()) -> non_neg_integer().
+fibonacci(0) -> 0;
+fibonacci(1) -> 1;
+fibonacci(N) -> fibonacci(N - 1) + fibonacci(N - 2).
