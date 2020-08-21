@@ -1,0 +1,26 @@
+<clase>
+    <estudiante id="1" >
+        <nombre>Andrea</nombre>
+        <apellido>Marroquin</apellido>
+        <edad>15</edad>
+        <promedio>75</promedio>
+    </estudiante>
+    <estudiante id="2">
+        <nombre>Julio</nombre>
+        <apellido>Fernandez</apellido>
+        <edad>13</edad>
+        <promedio>80</promedio>
+    </estudiante>
+    <estudiante id="3">
+        <nombre>Mario</nombre>
+        <apellido>Lopez</apellido>
+        <edad>17</edad>
+        <promedio>69</promedio>
+    </estudiante>
+    <estudiante id="4">
+        <nombre>Paola</nombre>
+        <apellido>Rodriguez</apellido>
+        <edad>17</edad>
+        <promedio>85</promedio>
+    </estudiante>
+</clase>

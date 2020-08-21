@@ -1,0 +1,26 @@
+[
+    {
+        "Nombre":"Ana",
+        "Edad":20,
+        "Carrera":"Ingenieria",
+        "Semestre":"4to"
+    },
+    {
+        "Nombre":"Andres",
+        "Edad":17,
+        "Carrera":"PSicología",
+        "Semestre":"1ro"
+    },
+    {
+        "Nombre":"Felipe",
+        "Edad":26,
+        "Carrera":"Medicina",
+        "Semestre":"1ro"
+    },
+    {
+        "Nombre":"Luisa",
+        "Edad":23,
+        "Carrera":"Odontología",
+        "Semestre":"7mo"
+    }
+]
