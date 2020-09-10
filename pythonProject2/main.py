@@ -11,7 +11,7 @@ texto="""(
     >,
     <
     [precio] = -56.4,
-    [descripcion] =  "este es el otro ejemplo, las cadenas pueden ser muy largas",
+    [descripcion] =  "este es el otro ejemplo las cadenas pueden ser muy largas",
     [disponible] = false
     >
 )"""
@@ -23,6 +23,7 @@ print(text4)
 
 def AFD(cadena):
     palabra = ""
+    palabra2=""
     numero=''
     estado=0
     for i in range(len(texto)):
@@ -32,10 +33,13 @@ def AFD(cadena):
                 estado=1
         if estado ==1:
             if cadena[i]=="<":
-                print(cadena[i]+" =token_mayorque")
+                print(cadena[i]+" =token_menorque")
                 estado=2
         if estado==2:
-            if cadena[i]=="[":
+            if cadena[i] == ")":
+                print(cadena[i] + " =token_parentesis")
+                estado = 2
+            elif cadena[i]=="[":
                 print(cadena[i]+" =token_corchete")
                 estado=3
         if estado==3:
@@ -43,6 +47,7 @@ def AFD(cadena):
                 palabra = palabra + cadena[i]
             elif cadena[i]=="]":
                 print(palabra+" =token_palabra")
+                palabra=''
                 print(cadena[i]+" =token")
                 estado=4
         if estado==4:
@@ -50,15 +55,29 @@ def AFD(cadena):
                 print(cadena[i]+" =token_igual")
                 estado=5
         if estado==5:
-            if cadena[i].isalnum():
+            if cadena[i].isdigit():
                 numero=numero+cadena[i]
+            elif cadena[i].isalpha():
+                palabra2=palabra2+cadena[i]
             elif cadena[i]==",":
-                print(numero)
+                print(numero + " =token_numero")
+                numero=''
+                print(palabra2 +' =token_palabra')
+                palabra2=''
                 print(cadena[i]+" =token_coma")
                 estado=2
+            elif cadena[i]==">":
+                print(palabra2 + ' =token_palabra')
+                palabra2 = ''
+                print(cadena[i] + " =token_mayorque")
+                estado = 2
+
+
+
+
 
 
 try:
     AFD(text4)
 except:
-    print(error)
+    print("")
